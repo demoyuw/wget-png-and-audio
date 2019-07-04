@@ -1,7 +1,9 @@
 #!/bin/bash
-
-for (( i=1;i<=100;i++ ))
+mkdir audio
+for (( i=1;i<=50;i++ ))
 do
-   wget -P "/Users/demoyuw/audio"  https://www.carry.live/event/card/upload/audio/$i.wav
+  if [[ ! -f "audio/$i.wav" ]]; then
+    wget -P "audio"  https://www.carry.live/event/card/upload/audio/$i.wav
+  fi
 done
 
